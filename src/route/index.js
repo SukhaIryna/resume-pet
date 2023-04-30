@@ -291,17 +291,28 @@ router.get('/', function (req, res) {
 router.get('/person', function (req, res) {
   //             ↙ cюди вводимо назву файлу з сontainer
   res.render('person', {
+    layout: 'person',
+    page: {
+      title: 'Resume - Emma Johnson',
+    },
+
     person: {
-      name: 'Emma Johnson',
-      age: 32,
-      gender: 'Female',
-      address: {
-        street: '123 Main St',
-        city: 'New York',
-        state: 'NY',
-        zip: '10001',
-        country: 'USA',
-      },
+      title: 'Resume Johnson E',
+      about: [
+        {
+          name: 'Emma Johnson',
+          age: 32,
+          gender: 'Female',
+          address: {
+            street: '123 Main St,',
+            city: 'New York,',
+            state: 'NY,',
+            zip: '10001,',
+            country: 'USA',
+          },
+        },
+      ],
+      title: 'Education',
       education: [
         {
           degree: 'Bachelor of Science',
@@ -311,6 +322,7 @@ router.get('/person', function (req, res) {
           graduationYear: 2012,
         },
       ],
+      title: 'Work experience',
       workExperience: [
         {
           company: 'Google',
@@ -323,10 +335,11 @@ router.get('/person', function (req, res) {
           ],
           year_founded: 1990,
           industry: 'Technology',
+          title: 'Employees',
           employees: [
             {
-              name: 'John Smith',
-              position: 'CEO',
+              name: 'John Smith,',
+              position: 'CEO,',
               department: 'Executive',
               projects: [
                 {
