@@ -5,20 +5,71 @@
             {{>title data="Work history" big=true}}
             <div>
                 <ul>
-                    {{#each work}}
+                    {{#each works}}
                     <li>
-                        <div>{{>position}}</div>
+                        <div>{{position}}</div>
+
                         <br>
-                        <div>{{>duration.from}} - {{>duration.to}}</div>
-                        <br>
+
                         <div>
-                            <a href="{{companny.url}}" {{company.name}}></a>
+                            {{duration.from}} -
+                            {{#if duration.to}}
+                            {{duration.to}}
+                            {{else}}
+                            (досі працюю)
+                            {{/if}}
                         </div>
+
+                        <br>
+
+                        <div>
+                            {{#unless company.url}}
+                            <b>{{company.name}}</b>
+                            {{else}}
+                            {{> link text=company.name href=company.url blank=true noLine=true}}
+                            {{/unless}}
+                        </div>
+
+                        <br>
+
+                        <div>
+                            <strong>Projects({{projectAmount}})</strong>
+                        </div>
+
+                        <br>
+                        <ul>
+                            {{#each projects}}
+                            <div>{{> link text=name href=url blank=true noLine=true}}</div>
+                            <br>
+                            <div>
+                                {{about}}
+                            </div>
+                            <br>
+                            <div>
+                                <em><b>Project stacks({{stacksAmount}})</b></em>
+                                <br>
+                                {{#each stacks}}
+                                <li>{{name}}</li>
+                                {{/each}}
+                            </div>
+                            <br>
+                            <div>
+                                <em><b>Project awards({{awardsAmount}})</b></em>
+                                <br>
+                                {{#each awards}}
+                                <li>{{name}}</li>
+                                {{/each}}
+                            </div>
+
+
+                            {{/each}}
+                        </ul>
+
                     </li>
                     {{/each}}
                 </ul>
             </div>
         </section>
     </main>
-    {{/main}}
+    {{/with}}
 </div>

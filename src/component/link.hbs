@@ -1,7 +1,8 @@
-<div>
-    {{#with social}}
-    {{>link text=email.text href=email.href blank=true }}
-    {{>link text=phone.text href=phone.href blank=true }}
-    {{>link text=linkedin.text href=linkedin.href blank=true }}
-    {{/with}}
-</div>
+<a href="{{href}}" {{#if blank}} target="_blank" {{/if}}>{{text}}</a>
+
+{{#unless noLine}}
+{{#if line}}
+--{{else}}
+/
+{{/if}}
+{{/unless}}
