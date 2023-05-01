@@ -224,17 +224,44 @@ router.get('/work', function (req, res) {
     header,
 
     main: {
-      work: [
+      title: 'Work history',
+      works: [
         {
           position: 'Junior Fullstak Developer',
           company: {
             name: 'IT Brains',
-            url: 'https://it-brains.com.ua/',
+            url: null,
           },
           duration: {
             from: '10.10.2022',
-            to: '22.03.2023',
+            to: null,
           },
+          projectAmount: 3,
+          projects: [
+            {
+              name: 'Resume',
+              url: 'https://resume.com.ua/',
+              about:
+                'It is good to be able to write a resume',
+
+              title: 'Project stacks',
+
+              stacksAmount: 8,
+              stacks: [
+                { name: 'React.js' },
+
+                { name: 'HTML /CSS' },
+
+                { name: 'Node.js' },
+              ],
+              title: 'Project awards',
+              awardsAmount: 2,
+              awards: [
+                { name: 'Super' },
+                { name: 'Puper' },
+              ],
+            },
+          ],
         },
       ],
     },
@@ -350,6 +377,9 @@ router.get('/bio', function (req, res) {
 
 // ================================================================
 
+<<<<<<< HEAD
 // ================================================================
+=======
+>>>>>>> 1ad742e219cae3942b8f494afa7de7a3ee93be2a
 // Підключаємо роутер до бек-енду
 module.exports = router
