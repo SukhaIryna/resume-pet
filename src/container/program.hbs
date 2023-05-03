@@ -1,0 +1,73 @@
+<div>
+    {{>title data="The Program of Cultural tour" big=true}}
+    <div>
+        {{#with program}}
+        <div>
+            {{#with excursion}}
+            <p><b>{{name}}</b></p>
+            {{#with location}}<p><b>Goal trips:</b> {{city}}, {{country}}</p>{{/with}}
+            <p><b>Date of tour:</b> {{date}}</p>
+            <hr>
+            <div>
+                {{>title data="Museum Visit" big=false}}
+                {{#each program}}
+                <p><b>{{name}}. {{type}}. {{duration}}</b></p>
+                <ul>
+                    {{#with details}}
+                    {{#with museum}}
+                    {{name}}
+                    {{#with location}}
+                    <li>{{address}}</li>
+                    <li>{{city}}</li>
+                    <li>{{country}}</li>
+                    {{/with}}
+                </ul>
+                <div>
+
+                    {{#each exhibits}}
+                    <b>{{name}}</b>
+                    <ul>
+                        <li>{{#if artist includeZero=true}} {{artist}} {{/if}} {{#unless artist includeZero=true}}
+                            (unknown artist) {{/unless}}</li>
+                        <li>{{description}}</li>
+                        <li>{{#if audio_guide}}Audio guide{{/if}}</li>
+                    </ul>
+                    {{/each}}
+
+                </div>
+                {{/with}}
+                {{>guide}}
+                {{/with}}
+
+                <div>
+
+                    <ul>
+                        {{#with details.venue}}
+                        <b>{{name}}</b>
+                        {{#with location}}
+                        <li>{{address}}</li>
+                        <li>{{city}}</li>
+                        <li>{{country}}</li>
+                        {{/with}}
+                        {{/with}}
+                    </ul>
+                </div>
+                <div>
+
+                    {{#each details.performers}}
+                    <p><b>{{name}} {{type}}</b></p>
+
+                    {{/each}}
+
+                </div>
+
+
+                {{/each}}
+
+            </div>
+            {{/with}}
+        </div>
+
+        {{/with}}
+    </div>
+</div>
