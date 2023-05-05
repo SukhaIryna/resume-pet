@@ -1,0 +1,74 @@
+<div>
+    <main>
+        {{>title data="JavaScript" big=true}}
+        <p>{{description}}</p>
+        <p><b>History:</b>{{#with history}} in {{year}} by {{founder}}{{/with}}</p>
+        <div>
+            <span class="badge text-bg-info">Types:</span>
+            {{#each types}}
+            <ul class="list-group">
+                <li class="list-group-item">{{this}}</li>
+            </ul>
+            {{/each}}
+        </div>
+        <div>
+            <span class="badge text-bg-info">Syntax:</span>
+            {{#with syntax}}
+            <ul class="list-group">
+                <li class="list-group-item">{{variables}}</li>
+                <li class="list-group-item">{{functions}}</li>
+                <li class="list-group-item">{{conditionals}}</li>
+                <li class="list-group-item">{{loops}}</li>
+                <li class="list-group-item">{{classes}}</li>
+            </ul>
+            {{/with}}
+        </div>
+        <div>
+            <span class="badge text-bg-info">Features:</span>
+            {{#each features}}
+            <ul class="list-group">
+                <li class="list-group-item">{{this}}</li>
+
+            </ul>
+            {{/each}}
+        </div>
+        <div>
+            <span class="badge text-bg-info">Libraries:</span>
+            {{#each libraries}}
+            <ul class="list-group">
+                <li class="list-group-item">{{this}}</li>
+
+            </ul>
+            {{/each}}
+
+        </div>
+        <div>
+            <span class="badge text-bg-info">Tools:</span>
+            {{#each tools}}
+            <ul class="list-group">
+                <li class="list-group-item">{{this}}</li>
+
+            </ul>
+            {{/each}}
+
+        </div>
+        <div>
+            <span class="badge text-bg-info">Community:</span>
+            {{#each community}}
+            <div class="container text-center">
+                <div class="row align-items-start">
+                    <div class="col">
+                        {{name}}
+                    </div>
+                    <div class="col">
+                        {{type}}
+                    </div>
+                </div>
+            </div>
+            {{/each}}
+
+        </div>
+    </main>
+
+
+</div>
