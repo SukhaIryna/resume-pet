@@ -1,0 +1,113 @@
+<main>
+    {{>title data="The car" big=true}}
+    <div class="card" style="width: 54rem;">
+        <img src="https://platform.cstatic-images.com/xlarge/in/v2/stock_photos/efc2df08-a513-4caa-ab68-6310da6e72ff/d9e3b2c0-552e-4764-ba72-ba207220d907.png"
+            class="card-img-top" alt="Toyota Camry">
+        <div class="card-body">
+            <h5 class="card-title">{{make}} {{model}}</h5>
+            <p class="card-text">Year: {{year}}, color: {{color}}</p>
+            <a href="#" class="btn btn-primary">Show details</a>
+        </div>
+        <div class="card">
+            <div class="card-body">
+                {{#with features}}
+                {{#with interior}}
+                <ul>Seats:{{#with seats}}
+                    <li>{{material}}</li>
+                    <li>{{color}}</li>
+                    <li>{{#if heated includeZero=true}} heated {{/if}}</li>
+                    <li>{{#if ventilated includeZero=true}} ventilated {{/if}}</li>
+                    {{/with}}
+                </ul>
+
+
+                <ul> Dashboard: {{#with dashboard}}
+                    <li>{{material}}</li>
+                    <li>{{color}}</li>
+                    <li>Display: {{#with display}} type:{{type}}, size: {{size}}, resolution: {{resolution}}, {{#if
+                        touchscreen
+                        includeZero=true}} touchscreen {{/if}} {{/with}}</li>
+                    {{/with}}
+                </ul>
+                <ul> Audio: {{#with audio}}
+                    <li>system: {{system}}</li>
+                    <li>speakers: {{speakers}}</li>
+                    <li>{{#if subwoofer includeZero=true}} subwoofer {{/if}}</li>
+                    <li>{{#if bluetooth includeZero=true}} bluetooth {{/if}}</li>
+                    <li>{{#if USB includeZero=true}} USB {{/if}}</li>
+                    {{/with}}
+
+                </ul>
+                {{/with}}
+
+                {{#with exterior}}
+                <ul> Wheels: {{#with wheels}}
+                    <li>size:{{size}}</li>
+                    <li>type:{{type}}</li>
+                    <li>color:{{color}}</li>
+                    {{/with}}
+                </ul>
+                <ul> Headlights: {{#with headlights}}
+                    <li>type: {{type}}</li>
+                    <li>brightness: {{brightness}}</li>
+                    <li>{{#if automatic includeZero=true}} automatic {{/if}}</li>
+                    {{/with}}
+                </ul>
+                <ul> Sunroof: {{#with sunroof}}
+                    <li>type: {{type}}</li>
+                    <li>size: {{size}}</li>
+                    <li>{{#if automatic includeZero=true}} automatic {{/if}}</li>
+                    {{/with}}
+                </ul>
+                {{/with}}
+
+                {{#with safety}}
+                <ul> Airbags:
+                    {{#with airbags}}
+                    <li> front: {{front}}</li>
+                    <li> side: {{side}}</li>
+                    <li> knee: {{knee}}</li>
+                    <li> rear: {{rear}}</li>
+                </ul>
+                {{/with}}
+
+                <ul> Assistance {{#with assistance}}
+                    <li>{{#if blind_spot_monitoring includeZero=true}} blind_spot_monitoring {{/if}}</li>
+                    <li>{{#if rear_cross_traffic_alert includeZero=true}} rear_cross_traffic_alert {{/if}}</li>
+                    <li>{{#if lane_departure_warning includeZero=true}} lane_departure_warning {{/if}}</li>
+                    <li>{{#if adaptive_cruise_control includeZero=true}} adaptive_cruise_control {{/if}}</li>
+                    <li>{{#if collision_warning includeZero=true}} collision_warning {{/if}}</li>
+                    {{/with}}
+                </ul>
+                {{/with}}
+                {{/with}}
+                <ul>Engine: {{#with engine}}
+                    <li>type: {{type}}</li>
+                    <li>displacement: {{displacement}}</li>
+                    <li>horsepower: {{horsepower}}</li>
+                    <li>torque: {{torque}}</li>
+                    <li>transmission: {{#with transmission}} {{type}}, {{gears}} {{/with}}</li>
+
+                    {{/with}}
+                </ul>
+                <ul>Fuel economy: {{#with fuel_economy}}
+                    <li>city: {{city}}</li>
+                    <li>highway: {{highway}}</li>
+                    <li>combined: {{combined}}</li>
+                    {{/with}}
+                </ul>
+                <ul>Price: {{#with price}}
+                    <li>base: {{base}}</li>
+                    <li>destination: {{destination}}</li>
+                    <li>options: {{#with options}}navigation: {{navigation}}, moonroof: {{moonroof}}, premium paint:
+                        {{premium_paint}}{{/with}}</li>
+                    <p><b>total: {{total}}</b></p>
+                    {{/with}}
+                </ul>
+
+
+            </div>
+        </div>
+    </div>
+
+</main>
