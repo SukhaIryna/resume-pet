@@ -1,0 +1,31 @@
+<main>
+    {{>title data="Facebook" big=true}}
+
+    <ul>{{#each users}} <h5>Users</h5>
+        <p><b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}}</b></p>
+        {{#each friends}}
+        <li><b>Friends:</b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}} </li>
+        {{#each mutual_friends}}
+        <li> <b>Mutal friends:</b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}} </li>
+        {{/each}}
+
+        {{/each}}
+
+        <hr>
+        {{#each groups}} <h5>Groups</h5>
+        <p><b> Id: {{id}} Name: {{name}}</b></p>
+        <p><b>Description: </b>{{ description}}</p>
+        <ul>
+            {{#each members}}
+            <li><b>Members:</b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}} </li>
+            {{/each}}
+        </ul>
+        {{/each}}
+
+
+        <hr>
+        <hr>
+        {{/each}}
+    </ul>
+
+</main>
