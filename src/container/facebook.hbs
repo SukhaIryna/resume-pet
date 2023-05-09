@@ -12,15 +12,21 @@
         {{/each}}
 
         <hr>
-        {{#each groups}} <h5>Groups</h5>
-        <p><b> Id: {{id}} Name: {{name}}</b></p>
-        <p><b>Description: </b>{{ description}}</p>
-        <ul>
-            {{#each members}}
-            <li><b>Members:</b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}} </li>
-            {{/each}}
-        </ul>
-        {{/each}}
+        <div class="card" style="width: 18rem;">
+
+            <div class="card-body">
+                {{#each groups}} <h5 class="card-title">Groups</h5>
+                <p class="card-text"><b> Id: {{id}} Name: {{name}}</b></p>
+                <p><b>Description: </b>{{ description}}</p>
+                <ul>
+                    {{#each members}}
+                    <li><b>Members:</b> Id: {{id}} Name: {{name}} Gender: {{gender}} Age: {{age}} </li>
+                    {{/each}}
+                </ul>
+                {{/each}}
+            </div>
+
+        </div>
 
 
         <hr>
