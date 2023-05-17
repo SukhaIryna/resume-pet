@@ -15,7 +15,7 @@
 
 
     <div class="row col-12">
-        <div class="row col-7 mb-5">
+        <div class="row col-8 mb-5">
             {{#with formBlock}}
             <p class="h1">{{header}}</p>
             {{#with rating}}
@@ -64,16 +64,16 @@
             {{/with}}
         </div>
 
-        <div class="col-5 mx-2">
+        <div class="col-4 mx-2">
             {{#with goodsInfo}}
-            <div class="card col-5 mb-2">
+            <div class="card mb-2">
                 <img src="{{photo}}" class="card-img-top" alt="{{name}}">
                 <div class="card-body">
                     <p class="card-text h4">{{name}}</p>
                 </div>
 
             </div>
-            <div class="card col-5 mb-2">
+            <div class="card mb-2">
                 <div class="card-body">
                     <p class="card-text h3">{{price}}</p>
                     <p>{{#if inMarket}}{{text}}{{/if}}</p>
@@ -87,7 +87,7 @@
                 </div>
 
             </div>
-            <div class="card col-5">
+            <div class="card">
                 {{#with seller}}
                 <div class="card-body">
                     <p>{{title}}: <b>{{value}}</b></p>
