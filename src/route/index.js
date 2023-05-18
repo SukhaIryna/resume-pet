@@ -2812,8 +2812,10 @@ router.get('/shopcatalog', function (req, res) {
   res.render('shopcatalog', {
     layout: 'basic',
     page: {
+
       title: 'Shopcatalog',
     },
+
     navigation: {
       links: [
         {
