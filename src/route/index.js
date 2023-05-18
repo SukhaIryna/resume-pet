@@ -2812,7 +2812,8 @@ router.get('/shopcatalog', function (req, res) {
   res.render('shopcatalog', {
     layout: 'basic',
     page: {
-      title: 'Shopreview',
+
+      title: 'Shopcatalog',
     },
 
     navigation: {
