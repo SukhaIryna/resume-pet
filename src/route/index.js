@@ -2812,7 +2812,6 @@ router.get('/shopcatalog', function (req, res) {
   res.render('shopcatalog', {
     layout: 'basic',
     page: {
-
       title: 'Shopcatalog',
     },
 
@@ -3183,10 +3182,31 @@ router.get('/shopcatalog', function (req, res) {
 })
 
 // ================================================================
+router.get('/bootstrap', function (req, res) {
+  // res.render генерує нам HTML сторінку
 
-//>>>>>>> 8831fc5279759824bb9753800c40ac80e2529ccc
-//<<<<<<< HEAD
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('bootstrap', {
+    layout: 'bootstrap',
+    page: {
+      title: 'Bootstrap',
+    },
+  })
+})
+
 // ================================================================
+router.get('/index8', function (req, res) {
+  // res.render генерує нам HTML сторінку
+
+  //            ↙ cюди вводимо назву файлу з сontainer
+  res.render('index8', {
+    layout: 'index8',
+    page: {
+      title: 'Index8',
+    },
+  })
+})
+
 //=======
 //>>>>>>> 1ad742e219cae3942b8f494afa7de7a3ee93be2a
 // Підключаємо роутер до бек-енду
