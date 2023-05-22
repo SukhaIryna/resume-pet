@@ -36,13 +36,13 @@ var footer = {
 // router.get Створює нам один ентпоїнт
 
 //           ↙ тут вводимо шлях (PATH) до сторінки
-router.get('/', function (req, res) {
-  // res.render генерує нам HTML сторінку
+//--router.get('/', function (req, res) {
+// res.render генерує нам HTML сторінку
 
-  //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
-  //                  ↑↑ сюди вводимо JSON дані
-})
+//            ↙ cюди вводимо назву файлу з сontainer
+//res.render('index', {})
+//                  ↑↑ сюди вводимо JSON дані
+//})
 
 // ================================================================
 
@@ -3195,12 +3195,13 @@ router.get('/bootstrap', function (req, res) {
 })
 
 // ================================================================
-router.get('/index8', function (req, res) {
+router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
   res.render('index8', {
     layout: 'index8',
+
     page: {
       title: 'Index8',
     },
